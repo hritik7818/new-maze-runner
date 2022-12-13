@@ -132,7 +132,26 @@ class _WebFirstScreenState extends State<WebFirstScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/maze.jpg", height: 400.h),
+                  Text(
+                    "Scan the QR Code",
+                    style: GoogleFonts.josefinSans(
+                        color: Colors.white,
+                        fontSize: 27.sp,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 50.h,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/gameUrl.png", height: 300.w),
+                      SizedBox(
+                        width: 40.w,
+                      ),
+                      Image.asset("assets/maze.jpg", height: 250.w),
+                    ],
+                  ),
                   SizedBox(
                     height: 100.h,
                   ),
@@ -173,7 +192,7 @@ class _WebFirstScreenState extends State<WebFirstScreen> {
                             fontSize: 25.sp, color: Colors.white),
                       ),
                       Text(
-                        " mazerunner.com",
+                        " atechnosmedia.com/maze-runner",
                         style: GoogleFonts.josefinSans(
                             fontSize: 25.sp,
                             color: const Color.fromARGB(255, 0, 255, 34)),

@@ -1,6 +1,5 @@
 # new_maze_runner
 
-A new Flutter project.
 
 ## Getting Started
 

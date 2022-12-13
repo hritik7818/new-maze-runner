@@ -257,11 +257,9 @@ class _KeyboardState extends State<Keyboard> {
                       color: Colors.white),
                 )
               : index == 11
-                  ? Image(
-                      image: const AssetImage("assets/check.png"),
+                  ? const Image(
+                      image: AssetImage("assets/check.png"),
                       color: Colors.greenAccent,
-                      height: 30.h,
-                      width: 30.w,
                     )
                   : index == 10
                       ? Text(
