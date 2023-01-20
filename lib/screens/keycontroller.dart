@@ -20,8 +20,14 @@ class Keycontroller extends StatefulWidget {
 }
 
 class _KeycontrollerState extends State<Keycontroller> {
-  Timer? timer;
-  int i = 0;
+  Timer? timerUp;
+  Timer? timerDown;
+  Timer? timerLeft;
+  Timer? timerRight;
+  int top = 0;
+  int down = 0;
+  int left = 0;
+  int right = 0;
   @override
   void initState() {
     // TODO: implement initState
@@ -45,16 +51,30 @@ class _KeycontrollerState extends State<Keycontroller> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onPanDown: (_) {
-                timer =
+              onLongPress: () {
+                timerUp?.cancel();
+                timerRight?.cancel();
+                timerLeft?.cancel();
+                timerDown?.cancel();
+                top = 0;
+                right = 0;
+                left = 0;
+                down = 0;
+                timerUp =
                     Timer.periodic(const Duration(milliseconds: 30), (timer) {
-                  setValueYOfPlayer(-i.toDouble());
-                  i++;
+                  setValueYOfPlayer(-top.toDouble());
+                  top++;
                 });
               },
-              onPanEnd: (KeycontrollerState) {
-                timer?.cancel();
-                i = 0;
+              onLongPressUp: () {
+                timerUp?.cancel();
+                timerRight?.cancel();
+                timerLeft?.cancel();
+                timerDown?.cancel();
+                top = 0;
+                right = 0;
+                left = 0;
+                down = 0;
                 setDefaultValuesOfPlayer();
               },
               child: Container(
@@ -76,16 +96,30 @@ class _KeycontrollerState extends State<Keycontroller> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onPanDown: (_) {
-                    timer = Timer.periodic(const Duration(milliseconds: 30),
+                  onLongPress: () {
+                    timerUp?.cancel();
+                    timerRight?.cancel();
+                    timerLeft?.cancel();
+                    timerDown?.cancel();
+                    top = 0;
+                    right = 0;
+                    left = 0;
+                    down = 0;
+                    timerLeft = Timer.periodic(const Duration(milliseconds: 30),
                         (timer) {
-                      setValueXOfPlayer(-i.toDouble());
-                      i++;
+                      setValueXOfPlayer(-left.toDouble());
+                      left++;
                     });
                   },
-                  onPanEnd: (_) {
-                    timer?.cancel();
-                    i = 0;
+                  onLongPressUp: () {
+                    timerUp?.cancel();
+                    timerRight?.cancel();
+                    timerLeft?.cancel();
+                    timerDown?.cancel();
+                    top = 0;
+                    right = 0;
+                    left = 0;
+                    down = 0;
                     setDefaultValuesOfPlayer();
                   },
                   child: Container(
@@ -104,16 +138,30 @@ class _KeycontrollerState extends State<Keycontroller> {
                   width: 140,
                 ),
                 GestureDetector(
-                  onPanDown: (_) {
-                    timer = Timer.periodic(const Duration(milliseconds: 30),
-                        (timer) {
-                      setValueXOfPlayer(i.toDouble());
-                      i++;
+                  onLongPress: () {
+                    timerUp?.cancel();
+                    timerRight?.cancel();
+                    timerLeft?.cancel();
+                    timerDown?.cancel();
+                    top = 0;
+                    right = 0;
+                    left = 0;
+                    down = 0;
+                    timerRight = Timer.periodic(
+                        const Duration(milliseconds: 30), (timer) {
+                      setValueXOfPlayer(right.toDouble());
+                      right++;
                     });
                   },
-                  onPanEnd: (_) {
-                    timer?.cancel();
-                    i = 0;
+                  onLongPressUp: () {
+                    timerUp?.cancel();
+                    timerRight?.cancel();
+                    timerLeft?.cancel();
+                    timerDown?.cancel();
+                    top = 0;
+                    right = 0;
+                    left = 0;
+                    down = 0;
                     setDefaultValuesOfPlayer();
                   },
                   child: Container(
@@ -134,16 +182,30 @@ class _KeycontrollerState extends State<Keycontroller> {
               height: 20,
             ),
             GestureDetector(
-              onPanDown: (_) {
-                timer =
+              onLongPress: () {
+                timerUp?.cancel();
+                timerRight?.cancel();
+                timerLeft?.cancel();
+                timerDown?.cancel();
+                top = 0;
+                right = 0;
+                left = 0;
+                down = 0;
+                timerDown =
                     Timer.periodic(const Duration(milliseconds: 30), (timer) {
-                  setValueYOfPlayer(i.toDouble());
-                  i++;
+                  setValueYOfPlayer(down.toDouble());
+                  down++;
                 });
               },
-              onPanEnd: (_) {
-                timer?.cancel();
-                i = 0;
+              onLongPressUp: () {
+                timerUp?.cancel();
+                timerRight?.cancel();
+                timerLeft?.cancel();
+                timerDown?.cancel();
+                top = 0;
+                right = 0;
+                left = 0;
+                down = 0;
                 setDefaultValuesOfPlayer();
               },
               child: Container(
