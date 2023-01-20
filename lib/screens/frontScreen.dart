@@ -45,7 +45,7 @@ class _FrontScreenState extends State<FrontScreen> {
                     color: Colors.white,
                     decoration: TextDecoration.none,
                   ),
-                  maxLength: 8,
+                  maxLength: 20,
                   decoration: InputDecoration(
                       hintText: "Nickname",
                       hintStyle: GoogleFonts.josefinSans(
@@ -77,7 +77,7 @@ class _FrontScreenState extends State<FrontScreen> {
                 child: ElevatedButton(
                   onPressed: () {
                     FocusScope.of(context).unfocus();
-                    _nickname.text.length > 3
+                    _nickname.text.isNotEmpty
                         ? Navigator.push(
                             context,
                             MaterialPageRoute(

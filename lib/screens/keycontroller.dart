@@ -51,6 +51,27 @@ class _KeycontrollerState extends State<Keycontroller> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
+              onTap: () {
+                timerUp?.cancel();
+                timerRight?.cancel();
+                timerLeft?.cancel();
+                timerDown?.cancel();
+                top = 0;
+                right = 0;
+                left = 0;
+                down = 0;
+                timerUp =
+                    Timer.periodic(const Duration(milliseconds: 30), (timer) {
+                  setValueYOfPlayer(-top.toDouble());
+                  top++;
+                });
+                Future.delayed(const Duration(milliseconds: 500), () {
+                  timerUp?.cancel();
+                  timerRight?.cancel();
+                  timerLeft?.cancel();
+                  timerDown?.cancel();
+                });
+              },
               onLongPress: () {
                 timerUp?.cancel();
                 timerRight?.cancel();
@@ -96,6 +117,27 @@ class _KeycontrollerState extends State<Keycontroller> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
+                  onTap: () {
+                    timerUp?.cancel();
+                    timerRight?.cancel();
+                    timerLeft?.cancel();
+                    timerDown?.cancel();
+                    top = 0;
+                    right = 0;
+                    left = 0;
+                    down = 0;
+                    timerLeft = Timer.periodic(const Duration(milliseconds: 30),
+                        (timer) {
+                      setValueXOfPlayer(-left.toDouble());
+                      left++;
+                    });
+                    Future.delayed(const Duration(milliseconds: 500), () {
+                      timerUp?.cancel();
+                      timerRight?.cancel();
+                      timerLeft?.cancel();
+                      timerDown?.cancel();
+                    });
+                  },
                   onLongPress: () {
                     timerUp?.cancel();
                     timerRight?.cancel();
@@ -138,6 +180,27 @@ class _KeycontrollerState extends State<Keycontroller> {
                   width: 140,
                 ),
                 GestureDetector(
+                  onTap: () {
+                    timerUp?.cancel();
+                    timerRight?.cancel();
+                    timerLeft?.cancel();
+                    timerDown?.cancel();
+                    top = 0;
+                    right = 0;
+                    left = 0;
+                    down = 0;
+                    timerRight = Timer.periodic(
+                        const Duration(milliseconds: 30), (timer) {
+                      setValueXOfPlayer(right.toDouble());
+                      right++;
+                    });
+                    Future.delayed(const Duration(milliseconds: 500), () {
+                      timerUp?.cancel();
+                      timerRight?.cancel();
+                      timerLeft?.cancel();
+                      timerDown?.cancel();
+                    });
+                  },
                   onLongPress: () {
                     timerUp?.cancel();
                     timerRight?.cancel();
@@ -182,6 +245,27 @@ class _KeycontrollerState extends State<Keycontroller> {
               height: 20,
             ),
             GestureDetector(
+              onTap: () {
+                timerUp?.cancel();
+                timerRight?.cancel();
+                timerLeft?.cancel();
+                timerDown?.cancel();
+                top = 0;
+                right = 0;
+                left = 0;
+                down = 0;
+                timerDown =
+                    Timer.periodic(const Duration(milliseconds: 30), (timer) {
+                  setValueYOfPlayer(down.toDouble());
+                  down++;
+                });
+                Future.delayed(const Duration(milliseconds: 500), () {
+                  timerUp?.cancel();
+                  timerRight?.cancel();
+                  timerLeft?.cancel();
+                  timerDown?.cancel();
+                });
+              },
               onLongPress: () {
                 timerUp?.cancel();
                 timerRight?.cancel();
